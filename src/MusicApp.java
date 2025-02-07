@@ -12,6 +12,9 @@ public class MusicApp {
         Song song = playerService.randomSong();
         ArrayList<String> subGenres = playerService.subGenresOfSong(song);
         System.out.println("Sub-genres of " + song.getGenre() + " are: " + subGenres);
+
+        playerService.createMixTape(50, 100, 4);
+        playerService.createMixTape(100, 150, 3, 2);
     }
 
 }
