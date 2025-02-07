@@ -1,18 +1,21 @@
-package model;
-
 public class Song {
 
     private String songName;
     private double duration;
-    private Genre genre = Genre.ROCK;
+    private Genre genre;
     private String mode;
     private String key;
     private String timeSignature;
     private int tempo;
 
-    public Song(String songName, double duration) {
+    public Song(String songName, double duration, Genre genre, String mode, String key, String timeSignature, int tempo) {
         this.songName = songName;
         this.duration = duration;
+        this.genre = genre;
+        this.mode = mode;
+        this.key = key;
+        this.timeSignature = timeSignature;
+        this.tempo = tempo;
     }
 
     public String getSongName() {

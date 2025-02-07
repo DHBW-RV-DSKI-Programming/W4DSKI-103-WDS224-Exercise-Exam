@@ -1,11 +1,9 @@
-package model;
-
 public class LiveSong extends Song {
 
     private String location;
 
-    public LiveSong(String songName, double duration, String location) {
-        super(songName, duration);
+    public LiveSong(String songName, double duration, Genre genre, String mode, String key, String timeSignature, int tempo, String location) {
+        super(songName, duration, genre, mode, key, timeSignature, tempo);
         this.location = location;
     }
 
