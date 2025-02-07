@@ -39,6 +39,38 @@ public class Song {
         this.genre = genre;
     }
 
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getTimeSignature() {
+        return timeSignature;
+    }
+
+    public void setTimeSignature(String timeSignature) {
+        this.timeSignature = timeSignature;
+    }
+
+    public int getTempo() {
+        return tempo;
+    }
+
+    public void setTempo(int tempo) {
+        this.tempo = tempo;
+    }
+
     public void play() {
         System.out.println("Playing " + songName + " for " + duration + " seconds");
     }
