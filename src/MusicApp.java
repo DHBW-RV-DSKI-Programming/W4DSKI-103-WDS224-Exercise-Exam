@@ -15,6 +15,10 @@ public class MusicApp {
 
         playerService.createMixTape(50, 100, 4);
         playerService.createMixTape(100, 150, 3, 2);
+
+        Song newSong = new LiveSong("Stan", 6.5, Genre.HIPHOP, "D", "Minor", "4/4", 90, "New York");
+        LoaderService.albums.get(LoaderService.albums.size() - 1).addSong(newSong);
+        playerService.playSong("Stan");
     }
 
 }

@@ -62,7 +62,7 @@ public class PlayerService {
     }
 
     void createMixTape(int minTempo, int maxTempo, int baseSignature) {
-        if (minTempo < 0 || maxTempo < 0 || baseSignature < 0) {
+        if (minTempo < 0 || maxTempo < 0 || baseSignature < 1 || baseSignature > 16 || minTempo > maxTempo) {
             System.out.println("Invalid input");
         } else {
             System.out.println("Creating mix tape...");
@@ -71,7 +71,7 @@ public class PlayerService {
     }
 
     void createMixTape(int minTempo, int maxTempo, int baseSignature, int duration) {
-        if (minTempo < 0 || maxTempo < 0 || baseSignature < 0 || duration < 0) {
+        if (minTempo < 0 || maxTempo < 0 || baseSignature < 1 || baseSignature > 16 || minTempo > maxTempo || duration < 0) {
             System.out.println("Invalid input");
         } else {
             System.out.println("Creating mix tape...");
