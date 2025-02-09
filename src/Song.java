@@ -75,7 +75,20 @@ public class Song {
     }
 
     public void play() {
-        System.out.println("Playing " + songName + " for " + duration + " seconds");
+        System.out.println("Playing a " + genre.name() + " song: " + songName );
+    }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "songName='" + songName + '\'' +
+                ", duration=" + duration +
+                ", genre=" + genre +
+                ", mode='" + mode + '\'' +
+                ", key='" + key + '\'' +
+                ", timeSignature='" + timeSignature + '\'' +
+                ", tempo=" + tempo +
+                '}';
     }
 
 }

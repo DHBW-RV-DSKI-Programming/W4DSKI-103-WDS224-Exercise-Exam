@@ -9,7 +9,7 @@ public class ElasticSearchable implements Searchable {
         ArrayList<Album> albums = LoaderService.albums;
         for (Album album : albums) {
             for (Song song : album.getSongs()) {
-                if (song.getSongName().contains(keyword)) {
+                if (song.getSongName().toLowerCase().contains(keyword)) {
                     return new ArrayList<>() {{
                         add(song);
                     }};
@@ -50,7 +50,9 @@ public class ElasticSearchable implements Searchable {
         ArrayList<Song> suitableSongs = new ArrayList<>();
         for (Album album : albums) {
             for (Song song : album.getSongs()) {
-                if (song.getTempo() >= minTempo && song.getTempo() <= maxTempo && song.getTimeSignature().equals(baseSignature)) {
+                String timeSignature = song.getTimeSignature();
+                String noteValue = timeSignature.split("/")[1];
+                if (song.getTempo() >= minTempo && song.getTempo() <= maxTempo && noteValue.equals(baseSignature)) {
                     suitableSongs.add(song);
                 }
             }
@@ -68,7 +70,9 @@ public class ElasticSearchable implements Searchable {
         ArrayList<Song> suitableSongs = new ArrayList<>();
         for (Album album : albums) {
             for (Song song : album.getSongs()) {
-                if (song.getTempo() >= minTempo && song.getTempo() <= maxTempo && song.getTimeSignature().equals(baseSignature)) {
+                String timeSignature = song.getTimeSignature();
+                String noteValue = timeSignature.split("/")[1];
+                if (song.getTempo() >= minTempo && song.getTempo() <= maxTempo && noteValue.equals(baseSignature)) {
                     suitableSongs.add(song);
                 }
             }

@@ -7,9 +7,10 @@ public class MusicApp {
         playerService.playSong("Bohemian Rhapsody");
         playerService.playSong("Stairway to Heaven");
 
-        playerService.playSongs();
+        playerService.playSongs(Genre.POP, 3.5, "C", "Major", "4/4", 120, "New York");
 
         Song song = playerService.randomSong();
+        System.out.println(song.toString());
         ArrayList<String> subGenres = playerService.subGenresOfSong(song);
         System.out.println("Sub-genres of " + song.getGenre() + " are: " + subGenres);
 

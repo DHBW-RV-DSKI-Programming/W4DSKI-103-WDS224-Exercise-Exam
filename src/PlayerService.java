@@ -1,27 +1,32 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class PlayerService {
 
-    private final static int MAX_VOLUME = 100;
     private final ElasticSearchable elasticSearchable = new ElasticSearchable();
 
     void playSong(String songName) {
         List<Song> songs = elasticSearchable.search(songName);
         if (songs.isEmpty()) {
-            System.out.println("Song not found");
+            System.out.println(SystemMessages.NO_SUCH_SONG_FOUND);
         } else {
-            System.out.println("Playing song: " + songs.get(0).getSongName() + " at volume: " + MAX_VOLUME);
+            Random random = new Random();
+            int randomIndex = random.nextInt(songs.size());
+            Song randomSong = songs.get(randomIndex);
+            randomSong.play();
         }
     }
 
-    void playSongs() {
+    void playSongs(Genre genre, double duration, String key, String mode, String timeSignature, int tempo, String location) {
         List<Song> songs;
-        songs = elasticSearchable.findSuitableSongs("POP", 3.5, "C", "Major", "4/4", 120, "New York");
+        songs = elasticSearchable.findSuitableSongs(genre.name(), duration, key, mode, timeSignature, tempo, location);
         if (songs.isEmpty()) {
-            System.out.println("Song not found");
-        } else {
-            System.out.println("Playing song: " + songs.get(0).getSongName() + " at volume: " + MAX_VOLUME);
+            System.out.println(SystemMessages.NO_SUITABLE_SONGS_FOUND);
+            return;
+        }
+        for (Song song : songs) {
+            song.play();
         }
     }
 
@@ -62,19 +67,26 @@ public class PlayerService {
     }
 
     void createMixTape(int minTempo, int maxTempo, int baseSignature) {
-        if (minTempo < 0 || maxTempo < 0 || baseSignature < 1 || baseSignature > 16 || minTempo > maxTempo) {
-            System.out.println("Invalid input");
-        } else {
-            System.out.println("Creating mix tape...");
+        if (minTempo < 0 || maxTempo < 0 || baseSignature < 4 || baseSignature > 8 || minTempo > maxTempo) {
+            System.out.println(SystemMessages.INVALID_INPUT);
+            return;
         }
-
+        String baseSignatureString = Integer.toString(baseSignature);
+        List<Song> songs = elasticSearchable.createMixTape(minTempo, maxTempo, baseSignatureString, 5);
+        for (Song song : songs) {
+            song.play();
+        }
     }
 
     void createMixTape(int minTempo, int maxTempo, int baseSignature, int duration) {
-        if (minTempo < 0 || maxTempo < 0 || baseSignature < 1 || baseSignature > 16 || minTempo > maxTempo || duration < 0) {
-            System.out.println("Invalid input");
-        } else {
-            System.out.println("Creating mix tape...");
+        if (minTempo < 0 || maxTempo < 0 || baseSignature < 4 || baseSignature > 8 || minTempo > maxTempo || duration < 0) {
+            System.out.println(SystemMessages.INVALID_INPUT);
+            return;
+        }
+        String baseSignatureString = Integer.toString(baseSignature);
+        List<Song> songs = elasticSearchable.createMixTape(minTempo, maxTempo, baseSignatureString, duration, 5);
+        for (Song song : songs) {
+            song.play();
         }
     }
 
