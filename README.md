@@ -2,59 +2,74 @@
 
 ## Kontext
 
-Du bist Junior Java-Softwareentwickler bei der Firma Harmonia. Harmonia ist ein Unternehmen, das sich auf die
-Entwicklung von Software für die Musikindustrie spezialisiert hat. Harmonia hat eine App entwickelt, die es Musikern
-ermöglicht, ihre Musik zu veröffentlichen und zu streamen. Die App ist bereits auf dem Markt und wird von vielen
-Musikern genutzt. Harmonia hat dich beauftragt, an der App zu arbeiten und neue Funktionen hinzuzufügen.
+Du bist Junior Java-Softwareentwickler bei der Firma *Harmonia*. *Harmonia* ist ein Unternehmen, das sich auf die
+Entwicklung von Software für die Musikindustrie spezialisiert hat. Das Unternehmen hat eine App entwickelt, die es
+Musikern ermöglicht, ihre Musik zu veröffentlichen und zu streamen. Die App ist bereits auf dem Markt und wird von
+vielen Musikern genutzt. *Harmonia* hat dich beauftragt, an der App zu arbeiten und neue Funktionen hinzuzufügen.
 
 ## Aufgaben
 
 ### Aufgabe 1: Implementiere die Klasse `Genre`
 
-Erstelle die Klasse `Genre`. Ein `Genre` kann die folgenden Werte annehmen: `ROCK`, `POP`, `HIPHOP`, `JAZZ`,
-`CLASSICAL`.
+Erstelle die Klasse `Genre`. Ein `Genre` kann die folgenden Werte annehmen:
 
-### Aufgabe 2: Implementiere die Klassen `Song`
+- `ROCK`
+- `POP`
+- `HIPHOP`
+- `JAZZ`
+- `CLASSICAL`
 
-Erstelle die Klasse `Song`. Ein `Song` hat die folgenden Eigenschaften: `songName`, `duration`, `genre`,
-`mode`, `key`, `timeSignature` und `tempo`. Die Eigenschaft `genre` ist ein `Enum`, die `duration` ist ein `double` und
-das `tempo` ist ein `int`. Alle anderen Eigenschaften sind vom Typ `String`.
+### Aufgabe 2: Implementiere die Klasse `Song`
 
-Der Konstruktor der Klasse `Song` initialisiert jede Eigenschaft.
+Erstelle die Klasse `Song` mit den folgenden Eigenschaften:
 
-Lege zu jeder Eigenschaft eine entsprechende Setter- und Getter-Methode an.
+- `songName` (`String`)
+- `duration` (`double`)
+- `genre` (`Genre`-Enum)
+- `mode` (`String`)
+- `key` (`String`)
+- `timeSignature` (`String`)
+- `tempo` (`int`)
+
+Der Konstruktor der Klasse `Song` initialisiert jede dieser Eigenschaften.
+Zusätzlich sind zu jeder Eigenschaft entsprechende Getter- und Setter-Methoden zu implementieren.
 
 ### Aufgabe 3: Implementiere die Klasse `Album`
 
-Erstelle die Klasse `Album`. Ein `Album` hat die folgenden Eigenschaften: `albumName` und `songs`. `albumName` ist dabei
-ein `String` und `songs` ist eine `ArrayList` von `Song`-Objekten. Der Konstruktor der Klasse `Album` initialisiert
-beide Variablen. Lege außerdem zu beiden Variablen entsprechende Setter- und Getter-Methoden an.
+Erstelle die Klasse `Album` mit den folgenden Eigenschaften:
+
+- `albumName` (`String`)
+- `songs` (`ArrayList<Song>`)
+
+Der Konstruktor der Klasse `Album` initialisiert beide Variablen. Zudem sind zu beiden Variablen die entsprechenden
+Getter- und Setter-Methoden anzulegen.
 
 ### Aufgabe 4: Erweitere die Klasse `Song`
 
-Erweitere die Klasse `Song` um die Methode `play()`. Die Methode `play()` gibt den Text
-`Playing a <genre> song: <songName>`
+Erweitere die Klasse `Song` um:
 
-Zudem benötigt die Klasse `Song` eine Überschreibung der Methode `toString()`. Ergänze diese Methode dementsprechend.
+- Die Methode `play()`, die den Text `Playing a <genre> song: <songName>` ausgibt.
+- Eine Überschreibung der Methode `toString()`, um eine sinnvolle Zeichenkettenrepräsentation des Objekts
+  bereitzustellen.
 
 ### Aufgabe 5: Erweitere die Klasse `Album`
 
-Die Klasse `Album` benötigt eine Methode `addSong`, welche als Parameter ein `Song`-Objekt erwartet und dieses der Liste
-`songs` hinzufügt. Des Weiteren benötigt die Methode eine Prüfung, ob die Liste bereits initialisiert wurde. Falls
-nicht, soll die Liste initialisiert werden.
+Füge der Klasse `Album` die Methode `addSong(Song song)` hinzu. Diese Methode:
+
+- Erwartet ein `Song`-Objekt als Parameter und fügt es zur Liste `songs` hinzu.
+- Prüft, ob die Liste bereits initialisiert wurde, und initialisiert sie gegebenenfalls.
 
 ### Aufgabe 6: Implementiere die Klasse `LiveSong`
 
-Erstelle die Klasse `LiveSong`. Ein `LiveSong` ist ein spezieller `Song`, der zusätzlich die Eigenschaft `location` hat.
-Die Eigenschaft `location` ist vom Typ `String`. Der Konstruktor der Klasse `LiveSong` initialisiert jede vererbte und
-eigene Eigenschaft. Lege zu jeder Eigenschaft eine entsprechende Setter- und Getter-Methode an.
+Erstelle die Klasse `LiveSong`, die von `Song` erbt und zusätzlich die Eigenschaft `location` (`String`) besitzt.
 
-Die Klasse `LiveSong` benötigt eine Überschreibung der Methode `play()`. Die Methode `play()` gibt den Text
-`Playing <songName> live at <location>`. Ergänze die Methode dementsprechend.
+- Der Konstruktor initialisiert sowohl die geerbten als auch die neue Eigenschaft.
+- Implementiere die entsprechenden Getter- und Setter-Methoden.
+- Überschreibe die Methode `play()`, sodass sie den Text `Playing <songName> live at <location>` ausgibt.
 
 ### Aufgabe 7: Lege das Interface `Searchable` an
 
-Erstelle das Interface `Searchable`. Das Interface hat die folgenden Methoden:
+Erstelle das Interface `Searchable` mit den folgenden Methoden:
 
 - `ArrayList<Song> search(String keyword)`
 -
@@ -63,18 +78,20 @@ Erstelle das Interface `Searchable`. Das Interface hat die folgenden Methoden:
 
 ### Aufgabe 8: Implementiere das Interface `Searchable`
 
-Implementiere das Interface `Searchable` durch die Klasse `HarmoniaSearchable`. Beachte dabei folgende Anforderungen:
+Implementiere das Interface `Searchable` durch die Klasse `HarmoniaSearchable` mit den folgenden Anforderungen:
 
-- Die Methode `search` gibt eine Liste von Songs zurück, die den Suchbegriff enthalten. Groß- oder Kleinschreibung soll
-  dabei keine Rolle spielen.
-- Die Methode `findSuitableSongs` gibt eine Liste von Songs zurück, die den übergebenen Kriterien entsprechen. Die
-  Methode soll dabei alle Kriterien berücksichtigen, die nicht `null` sind.
-- Die Methode `randomSong` gibt einen zufälligen Song zurück.
+- `search(String keyword)`: Gibt eine Liste von Songs zurück, die den Suchbegriff enthalten (Groß-/Kleinschreibung soll
+  ignoriert werden).
+- `findSuitableSongs(...)`: Gibt eine Liste von Songs zurück, die den übergebenen Kriterien entsprechen. Alle nicht-
+  `null`-Kriterien sollen berücksichtigt werden.
+- `randomSong()`: Gibt einen zufälligen Song zurück.
 
-Ferner sollen zwei weitere Methoden implementiert werden, welche `createMixTape` heißen. Der Zugriffsmodifikator soll
-`protected` sein. Die Methode `createMixTape` soll eine Liste von Songs zurückgeben. Die erste Methode nimmt die
-Parameter `minTempo`, `maxTempo`, `baseSignature` und `numSongs` entgegen. Die zweite Methode nimmt die so eben
-erwähnten Parameter sowie den Parameter `duration` entgegen.
+Zusätzlich sind zwei `protected` Methoden namens `createMixTape` zu implementieren:
+
+- `createMixTape(int minTempo, int maxTempo, String baseSignature, int numSongs)`: Gibt eine Liste von Songs zurück, die
+  innerhalb der angegebenen Tempo- und Taktart-Bereiche liegen.
+- `createMixTape(int minTempo, int maxTempo, String baseSignature, int numSongs, double duration)`: Erweiterung der
+  obigen Methode mit der Möglichkeit, eine maximale Dauer für das Mixtape anzugeben.
 
 ---
 Was als Transfer-Aufgabe?
