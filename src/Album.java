@@ -30,6 +30,7 @@ public class Album {
         if (songs == null) {
             songs = new ArrayList<>();
         }
+        // TODO: Dublette?
         songs.add(song);
     }
 

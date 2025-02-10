@@ -75,7 +75,7 @@ public class Song {
     }
 
     public void play() {
-        System.out.println("Playing a " + genre.name() + " song: " + songName );
+        System.out.println("Playing a " + genre.name() + " song: " + songName);
     }
 
     @Override

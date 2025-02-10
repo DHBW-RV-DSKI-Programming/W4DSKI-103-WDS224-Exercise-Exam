@@ -17,7 +17,7 @@ public class LiveSong extends Song {
 
     @Override
     public void play() {
-        System.out.println("Playing " + getSongName() + " for " + getDuration() + " seconds at " + location);
+        System.out.println("Playing " + getSongName() + " live at " + location);
     }
 
 }

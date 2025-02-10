@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class PlayerService {
 
-    private final ElasticSearchable elasticSearchable = new ElasticSearchable();
+    private final HarmoniaSearchable harmoniaSearchable = new HarmoniaSearchable();
 
     void playSong(String songName) {
-        List<Song> songs = elasticSearchable.search(songName);
+        List<Song> songs = harmoniaSearchable.search(songName);
         if (songs.isEmpty()) {
             System.out.println(SystemMessages.NO_SUCH_SONG_FOUND);
         } else {
@@ -20,7 +20,7 @@ public class PlayerService {
 
     void playSongs(Genre genre, double duration, String key, String mode, String timeSignature, int tempo, String location) {
         List<Song> songs;
-        songs = elasticSearchable.findSuitableSongs(genre.name(), duration, key, mode, timeSignature, tempo, location);
+        songs = harmoniaSearchable.findSuitableSongs(genre.name(), duration, key, mode, timeSignature, tempo, location);
         if (songs.isEmpty()) {
             System.out.println(SystemMessages.NO_SUITABLE_SONGS_FOUND);
             return;
@@ -63,7 +63,7 @@ public class PlayerService {
     }
 
     Song randomSong() {
-        return elasticSearchable.randomSong();
+        return harmoniaSearchable.randomSong();
     }
 
     void createMixTape(int minTempo, int maxTempo, int baseSignature) {
@@ -72,7 +72,7 @@ public class PlayerService {
             return;
         }
         String baseSignatureString = Integer.toString(baseSignature);
-        List<Song> songs = elasticSearchable.createMixTape(minTempo, maxTempo, baseSignatureString, 5);
+        List<Song> songs = harmoniaSearchable.createMixTape(minTempo, maxTempo, baseSignatureString, 5);
         for (Song song : songs) {
             song.play();
         }
@@ -84,7 +84,7 @@ public class PlayerService {
             return;
         }
         String baseSignatureString = Integer.toString(baseSignature);
-        List<Song> songs = elasticSearchable.createMixTape(minTempo, maxTempo, baseSignatureString, duration, 5);
+        List<Song> songs = harmoniaSearchable.createMixTape(minTempo, maxTempo, baseSignatureString, duration, 5);
         for (Song song : songs) {
             song.play();
         }

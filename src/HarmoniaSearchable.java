@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class ElasticSearchable implements Searchable {
+public class HarmoniaSearchable implements Searchable {
 
     @Override
     public ArrayList<Song> search(String keyword) {
