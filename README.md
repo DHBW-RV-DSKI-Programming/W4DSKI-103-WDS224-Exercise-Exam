@@ -99,3 +99,70 @@ Anforderungen:
 Für alle Klassen, Konstruktoren und Methoden gilt: Die Sichtbarkeit ist auf innerhalb des Pakets beschränkt.
 
 Die Main-Methode in der Klasse `CarPoolApp` muss schlussendlich korrekt funktionieren.
+
+## Teilbereich 3 - TODO (20 Punkte)
+
+### Aufgabe 7: Optimierung mit HashMap und Set (10 Punkte)
+
+Ein Unternehmen verwaltet eine große Liste von Produkten. Die Suche nach Produkten anhand ihrer **ID** ist momentan
+ineffizient, da sie über eine Liste (`ArrayList<Product>`) läuft. Optimiere die Suche durch ein Caching mittels
+des Datentyps `HashMap`, um schnelleren Zugriff zu ermöglichen. Eine HashMap funktioniert wie ein Wörterbuch: Jeder
+Eintrag besteht aus einem Schlüssel und einem Wert. Der Schlüssel ist eindeutig und wird verwendet, um den Wert zu
+identifizieren. Der Wert ist der eigentliche Inhalt, der gespeichert wird.
+
+Gegeben ist die Klasse `Product`:
+```java
+class Product {
+    private String id;
+    private String name;
+
+    public Product(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public String getId() { return id; }
+    public String getName() { return name; }
+}
+```
+
+Gegeben ist eine Klasse `ProductCatalog`, die eine Liste von `Produkten` speichert und eine _ineffiziente_ Suche
+implementiert:
+```java
+class ProductCatalog {
+    private List<Product> products = new ArrayList<>();
+
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+
+    public Product findProductById(String id) {
+        for (Product product : products) {
+            if (product.getId().equals(id)) {
+                return product;
+            }
+        }
+        return null;
+    }
+}
+```
+
+***Aufgaben***
+1. Lege das Attribut `productCache` in der Klasse `ProductCatalog` an. Dieses Attribut soll den Zugriffsmodifikator
+`public` haben. Initialisiere das Attribut als leeres `HashMap`. Wie bei einer ArrayListe kannst Du innerhalb der
+`<>` Operatoren die Typen der zu speichernden Daten angeben. In diesem Fall ist der Schlüssel die **Produkt-ID** und der
+zu speichernde Wert ist das `Produkt`-Objekt selbst.
+2. Die Methode `addProduct(Product product)` soll nun **anstatt** der Speicherung in der Liste, das Produkt in die
+HashMap `productCache` einfügen.
+3. Die Methode `findProductById(String id)` soll nun **anstatt** der Suche in der Liste, das Produkt aus der HashMap
+`productCache` zurückgeben. Der Anwendungsfall, dass ein Produkt vorhanden ist, wird hier nicht betrachtet. Es ist
+davon auszugehen, dass das Produkt immer vorhanden ist.
+
+Die Main-Methode in der Klasse `ProductManagerApp` muss nun korrekt funktionieren und einen zeitlichen
+Performance-Gewinn darstellen.
+
+4. In der Main-Methode der Klasse `ProductManagerApp2` findet ab Zeile 30 eine Umwandlung der HashMap in einen
+sogenannten `Set` statt. Dadurch, dass die HashMap ein Schlüssel-Wert-Paar speichert, sind die Schlüssel eindeutig.
+Jedoch sind die Werte nicht eindeutig. Ein Set hingegen speichert nur eindeutige Werte. Ergänze die Umwandlung der
+Produkt-Namen aus der HashMap in das Set `productNames`. Die Umwandlung soll in der Main-Methode der Klasse
+`ProductManagerApp2` erfolgen.
