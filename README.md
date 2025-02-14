@@ -166,3 +166,59 @@ sogenannten `Set` statt. Dadurch, dass die HashMap ein Schlüssel-Wert-Paar spei
 Jedoch sind die Werte nicht eindeutig. Ein Set hingegen speichert nur eindeutige Werte. Ergänze die Umwandlung der
 Produkt-Namen aus der HashMap in das Set `productNames`. Die Umwandlung soll in der Main-Methode der Klasse
 `ProductManagerApp2` erfolgen.
+
+### Aufgabe 8: Fehler in einer Anwendung (10 Punkte)
+
+Ein Unternehmen hat eine Anwendung zur Verwaltung von Buchungen. Gelegentlich treten _unerwartete Fehler_ auf: Buchungen
+werden nicht korrekt gespeichert oder überschrieben. Dein Ziel ist es, den/ die Fehler zu finden und zu beheben.
+
+Gegeben ist die Klasse `Booking`:
+```java
+class Booking {
+
+   private String id;
+   private String customerName;
+
+   Booking(String id, String customerName) {
+      this.id = id;
+      this.customerName = customerName;
+   }
+
+   String getId() {
+       return id;
+   }
+   
+   String getCustomerName() {
+       return customerName;
+   }
+}
+```
+
+Gegeben ist folgende Klasse `BookingManager`:
+```java
+class BookingManager {
+    private List<Booking> bookings = new ArrayList<>();
+
+    void addBooking(Booking booking) {
+        if (!bookings.contains(booking)) {
+            bookings.add(booking);
+        }
+    }
+
+    boolean isBookingPresent(String id) {
+        return bookings.contains(new Booking(id, ""));
+    }
+
+    ArrayList<Booking> getBookings() {
+        return bookings;
+    }
+}
+```
+
+**Fehlerbeschreibung:**
+
+- Buchungen mit bereits existierender `id` sollten nicht doppelt gespeichert werden, aber dennoch passiert es.
+- `isBookingPresent()` soll überprüfen, ob eine Buchung mit einer bestimmten `id` existiert, aber die Methode gibt
+ein falsches Ergebnis zurück.
+
+Die Main-Methode in der Klasse `BookingApp` muss am Ende korrekt funktionieren.
