@@ -65,3 +65,19 @@ sind. Es wird dabei nicht zwischen Groß- und Kleinschreibung unterschieden, son
 - übergeben wird, soll -1 zurückgegeben werden.
 
 Die Main-Methode in der Klasse `GhostWriterApp` muss nun korrekt funktionieren.
+
+### Aufgabe 5: Implementiere die Klasse `SimpleIntList` (15 Punkte)
+
+Erstelle eine Klasse `SimpleIntList`, die eine vereinfachte Liste für ganze Zahlen darstellt. Das Attribut `values` ist
+bereits vorgegeben und speichert die Werte. Der Datentyp von `values` darf keinesfalls durch eine ArrayList ausgetauscht
+werden, sondern bleibt stets bei `int[]`. Die Klasse `SimpleIntList` soll die folgenden Methoden enthalten:
+
+- `void add(int value)` – Fügt eine Zahl zur Liste hinzu. Die Liste soll automatisch um einen Platz vergrößert werden,
+wenn sie voll ist.
+- `int get(int index)` – Gibt das Element an der angegebenen Position zurück. Falls der Index ungültig ist, soll `-1`
+zurückgegeben werden.
+- `int size()` – Gibt die Anzahl der gespeicherten Elemente zurück. Falls die Liste noch nicht initialisiert wurde, soll
+`0` zurückgegeben werden.
+
+Die Main-Methode in der Klasse `ListManagerApp` muss nun korrekt funktionieren.
+
