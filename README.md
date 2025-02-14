@@ -1,15 +1,15 @@
-# Harmonia App
+# Programmentwurf - Übung
 
-## Kontext
+## Teilbereich 1 - Harmonia App (20 Punkte)
 
 Du bist Junior Java-Softwareentwickler bei der Firma *Harmonia*. *Harmonia* ist ein Unternehmen, das sich auf die
 Entwicklung von Software für die Musikindustrie spezialisiert hat. Das Unternehmen hat eine App entwickelt, die es
 Musikern ermöglicht, ihre Musik zu veröffentlichen und zu streamen. Die App ist bereits auf dem Markt und wird von
 vielen Musikern genutzt. *Harmonia* hat dich beauftragt, an der App zu arbeiten und neue Funktionen hinzuzufügen.
 
-## Teilbereich 1
+Am Ende der folgenden Aufgaben soll die Main-Methode in der Klasse `MusicApp` korrekt ausgeführt werden.
 
-### Aufgabe 1: Implementiere die Klasse `Genre`
+### Aufgabe 1: Implementiere die Klasse `Genre` (5 Punkte)
 
 Erstelle die Enum-Klasse mit dem Namen `Genre`. Ein Genre kann die folgenden Werte annehmen:
 
@@ -21,7 +21,7 @@ Erstelle die Enum-Klasse mit dem Namen `Genre`. Ein Genre kann die folgenden Wer
 Achte auf die korrekte Schreibweise. Da der Enum im gleichen Paket weiter genutzt wird, soll der Zugriffsmodifikator
 `package-private` verwendet werden.
 
-### Aufgabe 2: Implementiere die Klasse `Song`
+### Aufgabe 2: Implementiere die Klasse `Song` (11 Punkte)
 
 Erstelle die Klasse `Song` mit den folgenden Eigenschaften:
 
@@ -37,7 +37,7 @@ Zusätzlich sind zu jeder Eigenschaft entsprechende Getter- und Setter-Methoden 
 dabei auf den korrekten Zugriff durch `package-private` und eine korrekte Schreibweise der Methoden nach der Oracle
 Naming Convention.
 
-### Aufgabe 3: Erweitere die Klasse `Album`
+### Aufgabe 3: Erweitere die Klasse `Album` (4 Punkte)
 
 Füge der Klasse `Album` - bereits angelegt - die Methode mit der Signatur `addSong(Song song)` hinzu. Diese Methode:
 
@@ -45,3 +45,23 @@ Füge der Klasse `Album` - bereits angelegt - die Methode mit der Signatur `addS
 - Prüft, ob die Liste `songs` bereits initialisiert wurde, und initialisiert sie gegebenenfalls.
 
 Verwende den korrekten Zugriffsmodifikator - `package-private` - und schreibe die Methode als Prozedur.
+
+## Teilbereich 2 - TODO (40 Punkte)
+
+### Aufgabe 4: Implementiere die Klasse `TextAnalyzer` (10 Punkte)
+
+Schreibe eine Klasse `TextAnalyzer` mit folgender Methode:
+
+```java
+static int countVowels(String text) {}
+```
+
+- Die Methode zählt und gibt zurück, wie viele Vokale (`a`, `e`, `i`, `o`, `u`) insgesamt im übergebenen Text enthalten
+sind. Es wird dabei nicht zwischen Groß- und Kleinschreibung unterschieden, sondern zusammengezählt.
+- Falls ...
+  - `null`
+  - ein leerer String (`""`)
+  - ein String mit einem Leerzeichen (`" "`)
+- übergeben wird, soll -1 zurückgegeben werden.
+
+Die Main-Methode in der Klasse `GhostWriterApp` muss nun korrekt funktionieren.
