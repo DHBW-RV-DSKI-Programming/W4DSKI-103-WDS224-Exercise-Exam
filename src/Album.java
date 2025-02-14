@@ -1,37 +1,38 @@
 import java.util.ArrayList;
 
-public class Album {
+class Album {
 
     private String albumName;
     private ArrayList<Song> songs;
 
-    public Album(String albumName, ArrayList<Song> songs) {
+    Album(String albumName, ArrayList<Song> songs) {
         this.albumName = albumName;
         this.songs = songs;
     }
 
-    public String getAlbumName() {
+    String getAlbumName() {
         return albumName;
     }
 
-    public ArrayList<Song> getSongs() {
+    ArrayList<Song> getSongs() {
         return songs;
     }
 
-    public void setAlbumName(String albumName) {
+    void setAlbumName(String albumName) {
         this.albumName = albumName;
     }
 
-    public void setSongs(ArrayList<Song> songs) {
+    void setSongs(ArrayList<Song> songs) {
         this.songs = songs;
     }
 
-    public void addSong(Song song) {
-        if (songs == null) {
-            songs = new ArrayList<>();
+    void addSong(Song song) { // 1 Punkt
+        if (songs == null) { // 1 Punkt
+            songs = new ArrayList<>(); // 1 Punkt
         }
-        // TODO: Dublette?
-        songs.add(song);
+        songs.add(song); // 1 Punkt
     }
+
+    // Summe: 4 Punkte
 
 }

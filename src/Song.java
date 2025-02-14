@@ -1,94 +1,39 @@
-public class Song {
+class Song { // 1 Punkt
 
-    private String songName;
-    private double duration;
-    private Genre genre;
-    private String mode;
-    private String key;
-    private String timeSignature;
-    private int tempo;
+    private String songName; // 1 Punkt
+    private Genre genre; // 1 Punkt
+    private int tempo; // 1 Punkt
 
-    public Song(String songName, double duration, Genre genre, String mode, String key, String timeSignature, int tempo) {
+    Song(String songName, Genre genre, int tempo) {
         this.songName = songName;
-        this.duration = duration;
         this.genre = genre;
-        this.mode = mode;
-        this.key = key;
-        this.timeSignature = timeSignature;
         this.tempo = tempo;
-    }
+    } // 1 Punkt
 
-    public String getSongName() {
+    String getSongName() {
         return songName;
-    }
+    } // 1 Punkt
 
-    public double getDuration() {
-        return duration;
-    }
-
-    public void setSongName(String songName) {
+    void setSongName(String songName) {
         this.songName = songName;
-    }
+    } // 1 Punkt
 
-    public void setDuration(double duration) {
-        this.duration = duration;
-    }
-
-    public Genre getGenre() {
+    Genre getGenre() {
         return genre;
-    }
+    } // 1 Punkt
 
-    public void setGenre(Genre genre) {
+    void setGenre(Genre genre) {
         this.genre = genre;
-    }
+    } // 1 Punkt
 
-    public String getMode() {
-        return mode;
-    }
-
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getTimeSignature() {
-        return timeSignature;
-    }
-
-    public void setTimeSignature(String timeSignature) {
-        this.timeSignature = timeSignature;
-    }
-
-    public int getTempo() {
+    int getTempo() {
         return tempo;
-    }
+    } // 1 Punkt
 
-    public void setTempo(int tempo) {
+    void setTempo(int tempo) {
         this.tempo = tempo;
-    }
+    } // 1 Punkt
 
-    public void play() {
-        System.out.println("Playing a " + genre.name() + " song: " + songName);
-    }
-
-    @Override
-    public String toString() {
-        return "Song{" +
-                "songName='" + songName + '\'' +
-                ", duration=" + duration +
-                ", genre=" + genre +
-                ", mode='" + mode + '\'' +
-                ", key='" + key + '\'' +
-                ", timeSignature='" + timeSignature + '\'' +
-                ", tempo=" + tempo +
-                '}';
-    }
+    // Summe: 11 Punkte
 
 }

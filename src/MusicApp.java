@@ -1,25 +1,15 @@
-import java.util.ArrayList;
-
 public class MusicApp {
 
     public static void main(String[] args) {
-        PlayerService playerService = new PlayerService();
-        playerService.playSong("Bohemian Rhapsody");
-        playerService.playSong("Stairway to Heaven");
-
-        playerService.playSongs(Genre.POP, 3.5, "C", "Major", "4/4", 120, "New York");
-
-        Song song = playerService.randomSong();
-        System.out.println(song.toString());
-        ArrayList<String> subGenres = playerService.subGenresOfSong(song);
-        System.out.println("Sub-genres of " + song.getGenre() + " are: " + subGenres);
-
-        playerService.createMixTape(50, 100, 4);
-        playerService.createMixTape(100, 150, 3, 2);
-
-        Song newSong = new LiveSong("Stan", 6.5, Genre.HIPHOP, "D", "Minor", "4/4", 90, "New York");
-        LoaderService.albums.get(LoaderService.albums.size() - 1).addSong(newSong);
-        playerService.playSong("Stan");
+        Song song1 = new Song("Song1", Genre.ROCK, 120);
+        Song song2 = new Song("Song2", Genre.POP, 100);
+        Song song3 = new Song("Song3", Genre.CLASSICAL, 80);
+        Song song4 = new Song("Song4", Genre.HIPHOP, 140);
+        Album album = new Album("Album1", null);
+        album.addSong(song1);
+        album.addSong(song2);
+        album.addSong(song3);
+        album.addSong(song4);
     }
 
 }
