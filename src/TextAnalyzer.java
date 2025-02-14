@@ -5,10 +5,6 @@ class TextAnalyzer {
             return -1; // 1 Punkt
         }
 
-        if (text.trim().isEmpty()) { // 1 Punkt
-            return -1; // 1 Punkt
-        }
-
         int count = 0; // 0 Punkt → bereits vorgegeben
         text = text.toLowerCase(); // 1 Punkt
         for (int i = 0; i < text.length(); i++) { // 1 Punkt
@@ -20,6 +16,6 @@ class TextAnalyzer {
         return count; // 1 Punkt
     }
 
-    // 10 Punkte
+    // 8 Punkte
 
 }

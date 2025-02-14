@@ -46,9 +46,9 @@ Füge der Klasse `Album` - bereits angelegt - die Methode mit der Signatur `addS
 
 Verwende den korrekten Zugriffsmodifikator - `package-private` - und schreibe die Methode als Prozedur.
 
-## Teilbereich 2 - TODO (40 Punkte)
+## Teilbereich 2 - Ghostwriter, ListenManager und Fahrzeug-Pool (40 Punkte)
 
-### Aufgabe 4: Implementiere die Klasse `TextAnalyzer` (10 Punkte)
+### Aufgabe 4: Implementiere die Klasse `TextAnalyzer` (8 Punkte)
 
 Schreibe eine Klasse `TextAnalyzer` mit folgender Methode:
 
@@ -58,11 +58,7 @@ static int countVowels(String text) {}
 
 - Die Methode zählt und gibt zurück, wie viele Vokale (`a`, `e`, `i`, `o`, `u`) insgesamt im übergebenen Text enthalten
 sind. Es wird dabei nicht zwischen Groß- und Kleinschreibung unterschieden, sondern zusammengezählt.
-- Falls ...
-  - `null`
-  - ein leerer String (`""`)
-  - ein String mit einem Leerzeichen (`" "`)
-- übergeben wird, soll -1 zurückgegeben werden.
+- Falls `null` übergeben wird, soll `-1` zurückgegeben werden.
 
 Die Main-Methode in der Klasse `GhostWriterApp` muss nun korrekt funktionieren.
 
@@ -81,3 +77,25 @@ zurückgegeben werden.
 
 Die Main-Methode in der Klasse `ListManagerApp` muss nun korrekt funktionieren.
 
+### Aufgabe 6: Implementiere die Klassen `Vehicle`, `Car` und `Bicycle` (17 Punkte)
+
+Ein Unternehmen verwaltet Fahrzeuge in einer Software. Erstelle eine einfache Vererbungshierarchie mit folgenden
+Anforderungen:
+
+1. Erstelle eine abstrakte Klasse `Vehicle` mit:
+   - Einem `String`-Attribut `brand`, das nur innerhalb des Pakets sichtbar sein soll. Es wird kein Wert gesetzt.
+   - Einem `int`-Attribut `maxSpeed`, das nur innerhalb des Pakets sichtbar sein soll. Es wird kein Wert gesetzt.
+   - Einer Prozedur `printInfo()`, die eine folgende Fahrzeugbeschreibung auf der Konsole ausgibt:
+   `"Brand <brand>, Max Speed: <maxSpeed> km/h"`. Die `<>` sind Platzhalter für die Werte der Attribute. Für diese
+   Prozedur gilt die gleiche Sichtbarkeit wie für die Attribute.
+   
+2. Implementiere zwei Unterklassen `Car` und `Bicycle`, die von `Vehicle` erben:
+   - Der `Car`-Konstruktor soll `brand` und `maxSpeed` setzen und `printInfo()` so überschreiben, dass
+   `"The car of brand <brand> can reach a max speed of <maxSpeed> km/h."` ausgegeben wird.
+   - Der `Bicycle`-Konstruktor soll ebenfalls `brand` und `maxSpeed` setzen, wobei `printInfo()` hier ebenso
+   überschrieben wird und den folgenden Text ausgibt:
+   `"The bicycle of brand <brand> can reach a max speed of <maxSpeed> km/h."`.
+
+Für alle Klassen, Konstruktoren und Methoden gilt: Die Sichtbarkeit ist auf innerhalb des Pakets beschränkt.
+
+Die Main-Methode in der Klasse `CarPoolApp` muss schlussendlich korrekt funktionieren.
