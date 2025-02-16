@@ -5,7 +5,7 @@ class TextAnalyzer {
             return -1; // 1 Punkt
         }
 
-        int count = 0; // 0 Punkt → bereits vorgegeben
+        int count = 0;
         text = text.toLowerCase(); // 1 Punkt
         for (int i = 0; i < text.length(); i++) { // 1 Punkt
             char c = text.charAt(i); // 1 Punkt
