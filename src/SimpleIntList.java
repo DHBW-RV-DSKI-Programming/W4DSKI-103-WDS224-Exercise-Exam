@@ -6,9 +6,11 @@ class SimpleIntList {
     }
 
     int get(int index) {
+        return -1; // Linie löschen, nur für Compiler notwendig
     }
 
     int size() {
+        return -1; // Linie löschen, nur für Compiler notwendig
     }
 
 }

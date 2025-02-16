@@ -1,11 +1,13 @@
 class CarPoolApp {
 
     public static void main(String[] args) {
-        Car car = new Car();
-        car.printInfo();
+        // Zeilen wieder aktivieren, wenn die Klassen Car und Bicycle existieren - nur für Compiler auskommentiert
 
-        Bicycle bicycle = new Bicycle();
-        bicycle.printInfo();
+//        Car car = new Car();
+//        car.printInfo();
+//
+//        Bicycle bicycle = new Bicycle();
+//        bicycle.printInfo();
     }
 
 }

@@ -28,10 +28,16 @@ public class ProductManagerApp2 {
         catalog.findProductById("1");
 
         // Aufgabe 4
-        System.out.println(catalog.productCache.size());
+
+        // Zeile wieder aktivieren - nur für Compiler auskommentiert
+//        System.out.println(catalog.productCache.size());
+
         catalog.addProduct(new Product("20", "Lemon"));
         catalog.addProduct(new Product("21", "Lemon"));
-        System.out.println(catalog.productCache.size());
+
+        // Zeilen wieder aktivieren - nur für Compiler auskommentiert
+//        System.out.println(catalog.productCache.size());
+
         HashSet<String> productNames = new HashSet<>();
         System.out.println(productNames.size());
     }
