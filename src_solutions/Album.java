@@ -26,4 +26,13 @@ class Album {
         this.songs = songs;
     }
 
+    void addSong(Song song) { // 1 Punkt
+        if (songs == null) { // 1 Punkt
+            songs = new ArrayList<>(); // 1 Punkt
+        }
+        songs.add(song); // 1 Punkt
+    }
+
+    // Summe: 4 Punkte
+
 }

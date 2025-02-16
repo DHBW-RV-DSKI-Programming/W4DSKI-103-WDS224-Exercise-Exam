@@ -44,7 +44,9 @@ Füge der Klasse `Album` - bereits angelegt - die Methode mit der Signatur `addS
 - Erwartet ein `Song`-Objekt als Parameter und fügt es zur Liste `songs` hinzu.
 - Prüft, ob die Liste `songs` bereits initialisiert wurde, und initialisiert sie gegebenenfalls.
 
-Verwende den korrekten Zugriffsmodifikator - `package-private` - und schreibe die Methode als Prozedur.
+Verwende den korrekten Zugriffsmodifikator `package-private` und schreibe die Methode als Prozedur.
+
+Die Main-Methode in der Klasse `MusicApp` muss nun korrekt funktionieren.
 
 ## Teilbereich 2 - Ghostwriter, ListenManager und Fahrzeug-Pool (40 Punkte)
 
@@ -100,7 +102,7 @@ Für alle Klassen, Konstruktoren und Methoden gilt: Die Sichtbarkeit ist auf inn
 
 Die Main-Methode in der Klasse `CarPoolApp` muss schlussendlich korrekt funktionieren.
 
-## Teilbereich 3 - TODO (20 Punkte)
+## Teilbereich 3 - Optimierung und Bug Hunting (20 Punkte)
 
 ### Aufgabe 7: Optimierung mit HashMap und Set (10 Punkte)
 
@@ -129,20 +131,37 @@ class Product {
 Gegeben ist eine Klasse `ProductCatalog`, die eine Liste von `Produkten` speichert und eine _ineffiziente_ Suche
 implementiert:
 ```java
+import java.util.ArrayList;
+
 class ProductCatalog {
     private List<Product> products = new ArrayList<>();
 
     public void addProduct(Product product) {
+        long startTime = System.nanoTime();
+        
         products.add(product);
+
+        long endTime = System.nanoTime();
+        long duration = endTime - startTime;
+        System.out.println("addProduct of " + product.getName() + " took " + duration + " nanoseconds");
     }
 
     public Product findProductById(String id) {
+        long startTime = System.nanoTime();
+
+        Product foundProduct = null;
+        
         for (Product product : products) {
             if (product.getId().equals(id)) {
-                return product;
+                foundProduct = product;
             }
         }
-        return null;
+
+        long endTime = System.nanoTime();
+        long duration = endTime - startTime;
+        System.out.println("findProductById took " + duration + " nanoseconds");
+        
+        return foundProduct;
     }
 }
 ```

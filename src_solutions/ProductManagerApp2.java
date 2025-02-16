@@ -33,7 +33,12 @@ public class ProductManagerApp2 {
         catalog.addProduct(new Product("21", "Lemon"));
         System.out.println(catalog.productCache.size());
         HashSet<String> productNames = new HashSet<>();
+        for (Product product : catalog.productCache.values()) { // 2 Punkte
+            productNames.add(product.getName()); // 2 Punkte
+        }
         System.out.println(productNames.size());
     }
+
+    // 4 Punkte
 
 }
