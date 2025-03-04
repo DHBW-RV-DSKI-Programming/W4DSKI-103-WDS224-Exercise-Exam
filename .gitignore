@@ -28,6 +28,5 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-.idea
+### https://www.baeldung.com/intellij-idea-directory ###
 /.idea
-.idea/
