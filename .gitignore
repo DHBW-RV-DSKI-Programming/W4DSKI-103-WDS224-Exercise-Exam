@@ -30,3 +30,4 @@ bin/
 
 ### https://www.baeldung.com/intellij-idea-directory ###
 /.idea
+*.iml
