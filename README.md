@@ -1,7 +1,5 @@
 # Programmentwurf - Übung
 
-Test
-
 ## Teilbereich 1 - Harmonia App (20 Punkte)
 
 Du bist Junior Java-Softwareentwickler bei der Firma *Harmonia*. *Harmonia* ist ein Unternehmen, das sich auf die
